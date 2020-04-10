@@ -18,7 +18,7 @@ RUN ssh-keygen -t rsa -f /home/hadoop/.ssh/id_rsa -P '' && \
     cat /home/hadoop/.ssh/id_rsa.pub >> /home/hadoop/.ssh/authorized_keys
 
 # Installing Hadoop
-RUN wget https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz
+RUN wget https://downloads.apache.org/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz
 RUN tar -xzvf hadoop-${HADOOP_VERSION}.tar.gz -C /usr/local/
 RUN mv /usr/local/hadoop-${HADOOP_VERSION} /usr/local/hadoop
 ENV HADOOP_HOME=/usr/local/hadoop
